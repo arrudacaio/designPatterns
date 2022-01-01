@@ -9,6 +9,5 @@ test('Should create an account', () => {
     .build()
 
 
-  account.credit(1000)
-  expect(account.getBalance()).toBe(1000)
+  expect(account.getBalance()).toBe(0)
 })
