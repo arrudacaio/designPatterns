@@ -1,18 +1,19 @@
-export default class Account {
-  bank: string
-  branch: string
-  account: string
-  balance: number
+import AccountBuilder from "./AccountBuilder"
 
-  constructor(
-    bank: string,
-    branch: string,
-    account: string
-  ) {
-    this.bank = bank
-    this.branch = branch
-    this.account = account
+export default class Account {
+  bank: string | undefined
+  branch: string | undefined
+  account: string | undefined
+  balance: number
+  document: string
+
+  constructor(accountBuilder: AccountBuilder) {
+    this.bank = accountBuilder.bank
+    this.branch = accountBuilder.branch
+    this.account = accountBuilder.account
+    this.document = accountBuilder.document
     this.balance = 0
+
   }
 
   credit(amount: number): void {
