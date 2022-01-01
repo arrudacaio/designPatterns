@@ -21,6 +21,11 @@ export default class Account {
   }
 
 
+  debit(amount: number): void {
+    this.balance -= amount
+  }
+
+
   getBalance(): number {
     return this.balance
   }
