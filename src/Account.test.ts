@@ -1,5 +1,6 @@
 import Account from "./Account"
 import AccountBuilder from "./AccountBuilder"
+import CreditCommand from "./CreditCommand"
 import TransferService from "./TransferService"
 
 test('Should create an account', () => {
@@ -22,7 +23,9 @@ test('Should create an account and make a deposit', () => {
     .build()
 
 
-  account.credit(1000)
+  // account.credit(1000)
+  const creditCommand = new CreditCommand(account, 1000)
+  creditCommand.execute()
   expect(account.getBalance()).toBe(1000)
 })
 
